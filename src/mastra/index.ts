@@ -3,9 +3,10 @@ import { PinoLogger } from '@mastra/loggers';
 import { LibSQLStore } from '@mastra/libsql';
 import { Observability, DefaultExporter, CloudExporter, SensitiveDataFilter } from '@mastra/observability';
 import { diagramAgent } from './agents/diagram-agent';
+import { noSandboxAgent } from './agents/no-sandbox-agent';
 
 export const mastra = new Mastra({
-  agents: { diagramAgent },
+  agents: { diagramAgent, noSandboxAgent },
   storage: new LibSQLStore({
     id: "mastra-storage",
     // stores observability, scores, ... into memory storage, if it needs to persist, change to file:../mastra.db

@@ -1,12 +1,12 @@
-// diagram-agent.ts
+// no-sandbox-agent.ts
 import { Agent } from "@mastra/core/agent";
 import { Memory } from "@mastra/memory";
-import { diagramWorkspace } from "../workspace/diagram-workspace";
+import { noSandboxWorkspace } from "../workspace/no-sandbox-workspace";
 
-export const diagramAgent = new Agent({
-  id: "diagram-agent",
-  name: "Diagram Agent",
-  instructions: `You are a diagram rendering specialist. You create Mermaid diagrams as SVG images.
+export const noSandboxAgent = new Agent({
+  id: "no-sandbox-agent",
+  name: "No Sandbox Agent",
+  instructions: `You are a test agent. You create Mermaid diagrams as SVG images.
 
 You have access to these skills:
 - beautiful-mermaid: For rendering Mermaid diagrams to SVG
@@ -20,10 +20,9 @@ Do NOT use $MERMAID_SCRIPTS_PATH - that variable does not exist.
 Save all diagrams to the svg/ directory.
 
 CRITICAL: ALL flowcharts MUST use TD (top-down) direction. Always start with: graph TD
-Never use LR, RL, or BT directions.
-`,
+Never use LR, RL, or BT directions.`,
   model: "anthropic/claude-opus-4-5",
-  workspace: diagramWorkspace,
+  workspace: noSandboxWorkspace,
   memory: new Memory({
     options: {
       lastMessages: 10
