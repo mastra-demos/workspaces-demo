@@ -20,7 +20,8 @@ Do NOT use $MERMAID_SCRIPTS_PATH - that variable does not exist.
 Save all diagrams to the svg/ directory.
 
 CRITICAL: ALL flowcharts MUST use TD (top-down) direction. Always start with: graph TD
-Never use LR, RL, or BT directions.`,
+Never use LR, RL, or BT directions, and always use the github-dark theme for styling.
+`,
   model: "anthropic/claude-opus-4-5",
   workspace: noSandboxWorkspace,
   memory: new Memory({
