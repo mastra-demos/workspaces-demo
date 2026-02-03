@@ -10,4 +10,6 @@ export const diagramWorkspace = new Workspace({
   filesystem: new LocalFilesystem({ basePath: DIAGRAMS_DIR }),
   sandbox: new LocalSandbox({ workingDirectory: DIAGRAMS_DIR }),
   skills: ['/skills'],
+  bm25: true,
+  autoIndexPaths: ['/docs', '/skills'],
 });

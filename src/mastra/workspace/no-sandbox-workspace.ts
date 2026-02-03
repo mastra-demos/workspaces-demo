@@ -1,4 +1,4 @@
-import { Workspace, LocalFilesystem, LocalSandbox } from "@mastra/core/workspace";
+import { Workspace, LocalFilesystem } from "@mastra/core/workspace";
 import { resolve } from "path";
 
 // mastra dev runs from src/mastra/public/, so go up 3 levels to project root
@@ -10,5 +10,7 @@ export const noSandboxWorkspace = new Workspace({
   filesystem: new LocalFilesystem({ basePath: DIAGRAMS_DIR }),
   // Can read and write files, but can't run scripts so can't execute render script
   // sandbox: new LocalSandbox({ workingDirectory: DIAGRAMS_DIR }),
-  skills: ["/skills"]
+  skills: ["/skills"],
+  bm25: true,
+  autoIndexPaths: ["/docs", "/skills"],
 });
