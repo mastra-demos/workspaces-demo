@@ -32,23 +32,38 @@ This project includes two agents that demonstrate how workspace capabilities aff
 
 ### diagram-agent.ts (Full Capabilities)
 
-- **Workspace:** `diagram-workspace`
+- **Workspace:** [`diagram-workspace`](src/mastra/workspace/diagram-workspace.ts)
 - **Skills:** `mastra`, `beautiful-mermaid`
 - **Filesystem:** ✅ Can read/write files
 - **Sandbox:** ✅ Can execute scripts
 - **Search:** ✅ BM25 keyword search
+- **Tool Configuration:** This workspace demonstrates per-tool configuration using `WORKSPACE_TOOLS` constants:
+
+```typescript
+tools: {
+  [WORKSPACE_TOOLS.FILESYSTEM.WRITE_FILE]: {
+    requireApproval: true,
+    requireReadBeforeWrite: true
+  }
+}
+```
 
 This agent has full capabilities. It can search indexed docs, create Mermaid diagrams, write `.mmd` files, and run the render script to produce SVG output.
 
+Because these options are configured only on `WRITE_FILE`, the agent can freely use other tools (search, read files, execute scripts) but must read a file and get user approval before writing it to disk.
+
+- `requireApproval` — The agent must get user approval before writing files.
+- `requireReadBeforeWrite` — The agent must read a file before overwriting it, preventing blind overwrites.
+
 ### no-sandbox-agent.ts (Limited Capabilities)
 
-- **Workspace:** `no-sandbox-workspace`
+- **Workspace:** [`no-sandbox-workspace`](src/mastra/workspace/no-sandbox-workspace.ts)
 - **Skills:** `mastra`, `beautiful-mermaid`
 - **Filesystem:** ✅ Can read/write files
 - **Sandbox:** ❌ Cannot execute scripts
 - **Search:** ✅ BM25 keyword search
 
-This agent can access skills, search indexed docs, and write files, but cannot execute scripts. When asked to render a diagram, it can only write the `.mmd` file—it cannot run the render script to produce an SVG.
+This agent has limited capabilities and can access skills, search indexed docs, and write files, but cannot execute scripts. When asked to render a diagram, it can only write the `.mmd` file—it cannot run the render script to produce an SVG.
 
 ## Example Prompt
 
