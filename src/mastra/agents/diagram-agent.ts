@@ -21,6 +21,8 @@ Save all diagrams to the svg/ directory.
 
 CRITICAL: ALL flowcharts MUST use TD (top-down) direction. Always start with: graph TD
 Never use LR, RL, or BT directions, and always use the github-dark theme for styling.
+After rendering, ONLY say: "Created svg/filename.svg"
+No explanations. No commentary.
 `,
   model: "anthropic/claude-opus-4-5",
   workspace: diagramWorkspace,
