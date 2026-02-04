@@ -14,9 +14,8 @@ export const diagramWorkspace = new Workspace({
   bm25: true,
   autoIndexPaths: ["/docs", "/skills"],
   tools: {
-    [WORKSPACE_TOOLS.FILESYSTEM.WRITE_FILE]: {
-      requireApproval: true,
-      requireReadBeforeWrite: true
+    [WORKSPACE_TOOLS.SANDBOX.EXECUTE_COMMAND]: {
+      requireApproval: true
     }
   }
 });
