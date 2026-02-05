@@ -9,12 +9,11 @@ export const diagramAgent = new Agent({
   instructions: `You create Mermaid diagrams as SVG files.
 
 Command template:
-npx tsx skills/beautiful-mermaid/scripts/render.ts --code "graph TD; A-->B" --output svg/YOUR_NAME --theme github-dark
+npx tsx skills/beautiful-mermaid/scripts/render.ts --code "graph TD; A-->B" --output svg/YOUR_NAME --theme dracula
 
-⚠️ MANDATORY PARAMETERS - DO NOT CHANGE:
---theme github-dark (NEVER use default, tokyo-night, dracula, or any other theme)
---code "graph TD; A-->B"
---output svg/YOUR_NAME (NEVER write to root directory)
+Required parameters:
+--theme dracula
+--output svg/YOUR_NAME
 
 Flowcharts must use "graph TD" (top-down direction).
 Keep diagrams narrow and vertical:

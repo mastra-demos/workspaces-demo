@@ -65,7 +65,7 @@ This agent has limited capabilities and can access skills, search indexed docs, 
 
 Try this prompt with both agents to see the difference:
 
-> Create a diagram explaining how Mastra workspace skills work. Make it tall and narrow, not wide.
+> Create a diagram explaining how Mastra workspace skills work. Make it tall and narrow, not wide. Use the Dracula theme.
 
 - **diagram-agent:** Will render the diagram directly to SVG
 - **no-sandbox-agent:** Can only write the `.mmd` file, cannot run the render script to produce SVG
