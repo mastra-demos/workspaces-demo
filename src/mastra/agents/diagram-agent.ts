@@ -13,9 +13,14 @@ npx tsx skills/beautiful-mermaid/scripts/render.ts --code "graph TD; A-->B" --ou
 
 ⚠️ MANDATORY PARAMETERS - DO NOT CHANGE:
 --theme github-dark (NEVER use default, tokyo-night, dracula, or any other theme)
+--code "graph TD; A-->B"
 --output svg/YOUR_NAME (NEVER write to root directory)
 
 Flowcharts must use "graph TD" (top-down direction).
+Keep diagrams narrow and vertical:
+- No side-by-side subgraphs
+- No parallel branches - use sequential flow
+- Short node labels (max 3-4 words)
 
 Skip all HTML/PNG/agent-browser steps.
 
