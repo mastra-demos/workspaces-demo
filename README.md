@@ -70,11 +70,13 @@ Try this prompt with both agents to see the difference:
 - **diagram-agent:** Will render the diagram directly to SVG
 - **no-sandbox-agent:** Can only write the `.mmd` file, cannot run the render script to produce SVG
 
-To clean up generated SVG files between tests:
+To clean up generated files between runs:
 
 ```shell
 npm run clean
 ```
+
+This removes SVG outputs and any intermediate files created during diagram generation.
 
 ## Skills
 
