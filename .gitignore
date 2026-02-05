@@ -16,5 +16,6 @@ diagram-demo/*.js
 diagram-demo/*.sh
 diagram-demo/*.mmd
 diagram-demo/*.html
+diagram-demo/*.svg
 diagram-demo/package.json
 diagram-demo/package-lock.json
