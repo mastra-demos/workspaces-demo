@@ -7,4 +7,14 @@ dist
 .env
 *.db
 *.db-*
-svg/
+# Ignore generated files in svg directory but keep the directory
+diagram-demo/svg/*
+!diagram-demo/svg/.gitkeep
+
+# Ignore junk files created by no-sandbox agent
+diagram-demo/*.js
+diagram-demo/*.sh
+diagram-demo/*.mmd
+diagram-demo/*.html
+diagram-demo/package.json
+diagram-demo/package-lock.json
